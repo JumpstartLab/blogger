@@ -22,8 +22,4 @@ describe Comment do
     @comment.should_not be_valid
   end
 
-  it "must have an article_id that matches an existing article" do
-    @comment.article_id = -1
-    @comment.should_not be_valid
-  end
 end
