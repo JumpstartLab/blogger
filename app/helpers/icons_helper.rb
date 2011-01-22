@@ -5,9 +5,9 @@ module IconsHelper
             edit_polymorphic_path(object)
   end
 
-  def delete_icon(object)
+  def delete_icon(object, link_text = nil)
     delete_icon_filename = '/images/cancel.png'
-    link_to image_tag(delete_icon_filename),
+    link_to image_tag(delete_icon_filename) + link_text,
             polymorphic_path(object),
             :method => :delete,
             :confirm => "Delete '#{object}'?"

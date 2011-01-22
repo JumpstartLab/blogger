@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
 
   def tag_list=(input)
     #self.tags = []
-    names = input.split(",").collect{|text| text.strip}
+    names = input.split(",").collect{|text| text.strip.downcase}
     names.each do |name|
       tag = Tag.find_or_create_by_name(name)
       self.tags << tag unless self.tags.include?(tag)
