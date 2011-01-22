@@ -1,0 +1,19 @@
+<h1>All Articles</h1>
+
+<h5><%= flash[:notice] %></h5>
+
+<%= link_to "Create a New Article", new_article_path %>
+
+<p>
+  Tags: <%= tag_links(Tag.all) %>, <%= link_to "all", articles_path %>
+</p>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article_path(article) %>
+      <%= edit_icon(article) %>
+      <%= delete_icon(article) %>
+    </li>
+  <% end %>
+</ul>

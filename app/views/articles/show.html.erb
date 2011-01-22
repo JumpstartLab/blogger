@@ -1,0 +1,40 @@
+<h5><%= flash[:notice] %></h5>
+
+<h1><%= @article.title %></h1>
+
+<h5><%= tag_links(@article.tags) %></h5>
+
+<p><%= @article.body %></p>
+
+<%= edit_icon(@article, "Edit Article") %>
+
+<%= link_to "Delete this Article", article_path(@article), :method => :delete, :confirm => "Are you sure you want to delete this article?" %>
+
+<%= link_to "Back to All Articles", articles_path  %>
+
+<h2>Comments (<%= @article.comments.count %>)</h2>
+<% @article.comments.each do |comment| %>
+  <p>
+    <b><%= comment.author_name %></b> said
+    at <%= distance_of_time_in_words(@article.created_at, comment.created_at) %> later:
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h3>Add Your Comment</h3>
+<% form_for(@article.comments.new) do |f| %>
+    <p>
+        <%= f.label :author_name %><br/>
+        <%= f.text_field :author_name %>
+    </p>
+    <p>
+        <%= f.label :body %><br/>
+        <%= f.text_area :body %>
+    </p>
+    <%= f.hidden_field :article_id%>
+    <%= f.submit "Save" %>
+<% end %>
+
+
+
+
