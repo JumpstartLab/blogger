@@ -6,11 +6,12 @@ group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'faker'
+  gem 'ffaker'
   gem 'rb-fsevent'
   gem "compass", "0.11.beta.2"
   gem 'guard-shell'
   gem 'guard-livereload'
   gem 'fancy-buttons'
+  gem 'fabrication'
 end
 
