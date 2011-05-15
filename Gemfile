@@ -13,5 +13,19 @@ group :development, :test do
   gem 'guard-livereload'
   gem 'fancy-buttons'
   gem 'fabrication'
+  
+  gem 'guard', '0.3.4'
+  gem 'guard-rspec', '0.1.9'
+
+  # Mac OS X
+  gem 'rb-fsevent'
+  gem 'growl'
+
+  # Linux
+  #gem 'rb-inotify'
+  #gem 'libnotify'
+
+  # Windows
+  #gem 'rb-fchange'  
 end
 

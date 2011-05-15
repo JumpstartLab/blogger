@@ -326,6 +326,6 @@ form {
 }
 
 input[type=submit] {
-  @include fancy-button($header, $theme: mini);
+  @include fancy-button($header);
   font-size: 1.2em;
 }

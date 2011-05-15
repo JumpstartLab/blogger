@@ -24,7 +24,7 @@
 <% end %>
 
 <h4>Add Your Comment</h4>
-<% form_for(@article.comments.new) do |f| %>
+<%= form_for(@article.comments.new) do |f| %>
     <p>
         <%= f.label :author_name %><br/>
         <%= f.text_field :author_name %>
