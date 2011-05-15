@@ -2,8 +2,7 @@ require 'spec_helper'
 
 describe Article do
   before(:each) do
-    @article = Article.create(:title => "Sample title",
-                    :body => "Sample body")
+    @article = Fabricate(:article)
   end
 
   it "is not valid without a title" do

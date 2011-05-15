@@ -2,10 +2,8 @@ require 'spec_helper'
 
 describe Comment do
   before(:each) do
-    @article = Article.create(:title => "Sample title",
-                    :body => "Sample body")
-    @comment = @article.comments.new(:body => "This article rules!",
-                                     :author_name => "Daffy Duck")
+    @article = Fabricate(:article_with_comments)                                 
+    @comment = @article.comments.first
   end
 
   it "should be valid with valid attributes" do
