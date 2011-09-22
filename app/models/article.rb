@@ -30,10 +30,10 @@ class Article < ActiveRecord::Base
 
   def self.search(params)
     if params[:tag].nil?
-      Article.all
+      [Article.scoped, nil]
     else
       tag = Tag.find_by_name(params[:tag])
-      tag.articles
+      [tag.articles, tag]
     end
   end
 end

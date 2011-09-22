@@ -1,6 +1,10 @@
 module TagsHelper
   def tag_links(tags)
-    content_tag(:ul, tag_list_items(tags) + content_tag(:li, link_to("all", articles_path)))
+    content_tag(:ul, 
+      content_tag(:li, 
+        link_to("<strong>all</strong>".html_safe, articles_path)) + 
+      tag_list_items(tags)
+    )
   end
   
   def tag_list_items(tags)
