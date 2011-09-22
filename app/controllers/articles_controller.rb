@@ -12,10 +12,13 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    a = Article.new(params[:article])
-    a.save
-    flash[:notice] = "#{a} was created."
-    redirect_to articles_path
+    @article = Article.new(params[:article])
+    if @article.save
+      flash[:notice] = "Article was created."
+      redirect_to articles_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -23,10 +26,13 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    article = Article.find params[:id]
-    article.update_attributes(params[:article])
-    flash[:notice] = "#{article} was updated."
-    redirect_to article_path(article)
+    @article = Article.find params[:id]
+    if @article.update_attributes(params[:article])
+      flash[:notice] = "Article was updated."
+      redirect_to article_path(@article)
+    else
+      render :edit
+    end
   end
 
   def destroy
