@@ -24,7 +24,7 @@ html {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans;
   background: #fff;
-  margin: 50px auto 30px;
+  margin: 80px auto 30px;
   color: $text;
   padding: 20px;
   width: 85%;
@@ -73,7 +73,7 @@ p.flash {
   text-shadow: rgba(#000, .6) 0 -1px;
   color: #fff;
   margin: 0 auto;
-  position: absolute; top: -51px; left: 0;
+  position: absolute; top: -81px; left: 0;
   padding: .4em .8em;
   width: 100%;
   text-align: center;
@@ -340,5 +340,38 @@ div.field_with_errors {
 
   input {
     border: 3px solid red;
+  }
+}
+
+div#account {
+  @include border-radius(6px);
+  @include box-sizing(border-box);
+  @include background-image(linear-gradient(rgba(#000, .4), rgba(#000, .6)));
+  border: 3px solid rgba(#fff, .5);
+  @include background-clip(padding-box);
+  text-shadow: rgba(#000, .6) 0 -1px;
+  color: #fff;
+  margin: 0 auto;
+  position: absolute; top: -40px; left: 0;
+  padding: .4em .8em;
+  width: 15em;
+  text-align: right;
+  &:empty {
+    height: 0px;
+    overflow: hidden;
+    padding: 0;
+    border-width: 0;
+    @include box-shadow(none);
+    background: none;
+  }
+  span{
+    float: left;
+  }
+  a:link, a:visited{
+    color: #AAA;
+    text-decoration: none;
+  }
+  a:hover{
+    color: #DDF;
   }
 }
