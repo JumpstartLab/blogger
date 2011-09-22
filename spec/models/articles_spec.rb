@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Article do
   before(:each) do
-    @article = Fabricate(:article)
+    @article = Article.new(:title => "Hello, World", 
+                           :body => "Sample Body.")
   end
 
   it "is not valid without a title" do
@@ -16,6 +17,7 @@ describe Article do
   end
 
   it "must have a unique title" do
+    @article.save
     second = @article.clone
     second.should_not be_valid
   end
