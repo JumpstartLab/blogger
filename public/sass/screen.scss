@@ -317,6 +317,7 @@ form {
     padding-bottom: .2em;
     display: inline-block;
     text-transform: uppercase;
+    display: block;
   }
   textarea {
     @extend .input;
@@ -328,4 +329,16 @@ form {
 input[type=submit] {
   @include fancy-button($header);
   font-size: 1.2em;
+}
+
+div.field_with_errors {
+  label {
+    color: red; 
+    font-weight: bold;
+    margin: 0px;
+  }
+
+  input {
+    border: 3px solid red;
+  }
 }
