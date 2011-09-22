@@ -1,5 +1,0 @@
-@mixin gradient-bg($color, $contrast: 5, $color2: false) {
-  $c1: adjust-color($color, $lightness: $contrast);
-  $c2: if($color2, $color2, adjust-color($color, $lightness: -$contrast));
-  @include background-image(linear-gradient($c1, $c2));
-}
