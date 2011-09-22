@@ -7,15 +7,15 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 group :development, :test do
   # Testing:
   gem 'rspec-rails'
-  gem 'capybara'
-  gem 'faker'
-  gem 'fabrication'  
+  # gem 'capybara'
+  # gem 'faker'
+  # gem 'fabrication'  
 
   # Styling:
   gem 'compass', '0.11.5'
   gem 'fancy-buttons'
   
-  # To use Guard:
+  # Using Guard:
   #   gem 'guard-shell'
   #   gem 'guard-livereload'
   #   gem 'guard'
