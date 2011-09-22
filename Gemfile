@@ -1,31 +1,33 @@
-source 'http://rubygems.org'
+source :rubygems
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.10'
+gem 'rake', '0.9.2'
+gem 'sqlite3-ruby', :require => 'sqlite3'
 
 group :development, :test do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
+  # Testing:
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'ffaker'
-  gem 'rb-fsevent'
-  gem "compass", "0.11.beta.2"
-  gem 'guard-shell'
-  gem 'guard-livereload'
+  gem 'faker'
+  gem 'fabrication'  
+
+  # Styling:
+  gem 'compass', '0.11.5'
   gem 'fancy-buttons'
-  gem 'fabrication'
   
-  gem 'guard', '0.3.4'
-  gem 'guard-rspec', '0.1.9'
-
+  # To use Guard:
+  #   gem 'guard-shell'
+  #   gem 'guard-livereload'
+  #   gem 'guard'
+  #   gem 'guard-rspec'
+  # Then, platform-specific FS Event Gems:
   # Mac OS X
-  gem 'rb-fsevent'
-  gem 'growl'
-
+  #   gem 'rb-fsevent'
+  #   gem 'growl'
   # Linux
-  #gem 'rb-inotify'
-  #gem 'libnotify'
-
+  #   gem 'rb-inotify'
+  #   gem 'libnotify'
   # Windows
-  #gem 'rb-fchange'  
+  #   gem 'rb-fchange'  
 end
 
