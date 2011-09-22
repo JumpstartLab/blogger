@@ -375,3 +375,17 @@ div#account {
     color: #DDF;
   }
 }
+
+nav{
+  span:first-of-type:before{ content: "Pages: "; }
+  margin-top: 2em;
+  @include border-radius(6px);
+  @include box-sizing(border-box);
+  border: 3px solid rgba(#666, .5);
+  background: #EEE;
+  @include background-clip(padding-box);
+  color: #333;
+  padding: .2em .4em;
+  a:link, a:visited{ color: #666; text-decoration: none; }
+  a:hover{ color: #33F; }
+}
