@@ -6,6 +6,7 @@ gem 'jquery-rails'
 
 gem 'paperclip'
 gem 'haml'
+gem 'sorcery'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,0 +1,16 @@
+%h1 Login
+
+= form_tag author_sessions_path, :method => :post do
+  .field
+    = label_tag :username
+    = text_field_tag :username
+    %br/
+  .field
+    = label_tag :password
+    = password_field_tag :password
+    %br/
+  .actions
+    = submit_tag "Login"
+
+= link_to 'Back', articles_path
+
