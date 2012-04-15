@@ -3,6 +3,10 @@
 
 <p><%= @article.body %></p>
 
+<% if @article.image_file_name %>
+  <p><%= image_tag @article.image.url %></p>
+<% end %>
+
 <h3>Comments (<%= @article.comments.count %>)</h3>
 
 <%= render :partial => 'comment', :collection => @article.comments %>
